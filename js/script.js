@@ -3,6 +3,7 @@ const app = new Vue(
     el: "#root",
 
     data:{
+        newItem:"",
         todos:[
             {
                 text: 'Fare i compiti',
@@ -28,5 +29,12 @@ const app = new Vue(
     },
     
     methods:{
+        add: function(item){
+            this.todos.push({
+                text:item,
+                done: false
+            });
+            this.newItem=""
+        }
     }
 });

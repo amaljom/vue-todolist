@@ -19,6 +19,8 @@
           </div>
           <div class="bottone mt-5">
             <a @click.prevent="todos.splice(ind, 1)" v-for="(todo, ind) in todos" href="" class="btn btn-primary margin-y">X</a>
+            <input type="text" v-model="newItem">
+            <a @click.prevent="add(newItem)" href="#" class="btn btn-success">Add</a>
           </div>
     </div>
     
