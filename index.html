@@ -14,7 +14,7 @@
     <div id="root">
         <div class="card mx-auto mt-5" style="width: 18rem;">
             <ul v-for="(todo, index) in todos" class="list-group list-group-flush">
-              <li class="list-group-item">{{ todos[index].text }}</li>
+              <li class="list-group-item" :class="(todos[index].done === true)? 'text-decoration-line-through' : ''">{{ todos[index].text }}</li>
             </ul>
           </div>
     </div>
@@ -22,3 +22,4 @@
     <script src="./js/script.js"></script>
 </body>
 </html>
+
