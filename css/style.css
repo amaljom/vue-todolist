@@ -1,0 +1,9 @@
+.bottone{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 40%;
+}
+.margin-y{
+    margin-bottom: 3px;
+}
