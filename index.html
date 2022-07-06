@@ -14,13 +14,13 @@
     <div class="d-flex" id="root">
         <div class="card mx-auto mt-5 d-flex" style="width: 18rem;">
             <ul  class="list-group list-group-flush">
-              <li v-for="(todo, index) in todos" class="list-group-item" :class="(todos[index].done === true)? 'text-decoration-line-through' : ''">{{ todos[index].text }}</li>
+              <li @click="changeList(index)" v-for="(todo, index) in todos" class="list-group-item" :class="(todos[index].done === true)? 'text-decoration-line-through' : ''">{{ todos[index].text }}</li>
             </ul>
           </div>
           <div class="bottone mt-5">
             <a @click.prevent="todos.splice(ind, 1)" v-for="(todo, ind) in todos" href="" class="btn btn-primary margin-y">X</a>
-            <input type="text" v-model="newItem">
-            <a @click.prevent="add(newItem)" href="#" class="btn btn-success">Add</a>
+            <input type="text" v-model="newItem" @keyup.enter="add(newItem)" >
+            <a @click.prevent="add(newItem)"  href="#" class="btn btn-success">Add</a>
           </div>
     </div>
     

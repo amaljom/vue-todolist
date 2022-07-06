@@ -30,11 +30,16 @@ const app = new Vue(
     
     methods:{
         add: function(item){
-            this.todos.push({
-                text:item,
-                done: false
-            });
+            if (item!="") {
+                this.todos.push({
+                    text:item,
+                    done: false
+                });  
+            }
             this.newItem=""
+        },
+        changeList: function(i){
+            this.todos[i].done=!this.todos[i].done;
         }
     }
 });
